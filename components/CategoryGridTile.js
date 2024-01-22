@@ -7,7 +7,7 @@ function CategoryGridTile({ title, color, onPress }) {
         android_ripple={{ color: '#ccc' }}
         style={({ pressed }) => [
           styles.button,
-          pressed ? styles.buttonPressed : null
+          pressed ? styles.buttonPressed : null,
         ]}
         onPress={onPress}
       >
@@ -27,33 +27,29 @@ const styles = StyleSheet.create({
     margin: 16,
     height: 150,
     borderRadius: 8,
-    overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
-
-    //shadow for android
     elevation: 4,
-
-    //shadow for ios
-    backgroundColor: 'white', //Nessary for ios. Otherwise no shadow appears.
+    backgroundColor: 'white',
     shadowColor: 'black',
     shadowOpacity: 0.25,
     shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 8
+    shadowRadius: 8,
+    overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
   },
   button: {
-    flex: 1
+    flex: 1,
   },
   buttonPressed: {
-    opacity: 0.5
+    opacity: 0.5,
   },
   innerContainer: {
     flex: 1,
     padding: 16,
     borderRadius: 8,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   title: {
     fontWeight: 'bold',
-    fontSize: 18
-  }
+    fontSize: 18,
+  },
 });
